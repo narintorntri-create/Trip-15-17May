@@ -1,0 +1,806 @@
+[ทริปกราบ พอจ ชยสาโร on15-17May.html](https://github.com/user-attachments/files/27465111/on15-17May.html)
+# Trip-15-17May<!DOCTYPE html>
+<!-- saved from url=(0129)file:///C:/Users/Dell/Downloads/%E0%B9%81%E0%B8%9E%E0%B8%A5%E0%B8%99%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7_1.html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แพลนเที่ยว</title>
+<link href="./แพลนเที่ยว1.1_files/css2" rel="stylesheet">
+<style>
+/* ============================================================
+   CSS — ส่วนนี้ควบคุมความสวยงามทั้งหมด
+   ไม่จำเป็นต้องแก้ไข ยกเว้นอยากเปลี่ยนสีหรือขนาดตัวอักษร
+   ============================================================ */
+
+  :root {
+    /* สีหลักของธีม — แก้ตรงนี้เพื่อเปลี่ยนสีทั้งหมด */
+    --gold: #C9A84C;
+    --gold-light: #F0D98A;
+    --dark: #1A1A1A;
+    --card: #242424;
+    --border: #333;
+    --text: #E8E0D0;
+    --muted: #888;
+    --green: #4CAF7D;
+    --blue: #4A90C4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Sarabun', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2010 100%);
+    border-bottom: 1px solid #3a3010;
+    padding: 24px 20px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .trip-badge {
+    display: inline-block;
+    background: var(--gold); color: #1a1100;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .trip-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: #fff; line-height: 1.3;
+  }
+  .trip-meta {
+    margin-top: 10px; display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 12px; color: var(--muted);
+  }
+  .meta-item span { color: var(--gold-light); font-weight: 600; }
+  .day-tabs {
+    padding: 14px 20px 0;
+    display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+    background: var(--dark);
+    position: sticky; top: 109px; z-index: 99;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .day-tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex-shrink: 0;
+    padding: 7px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    border: 1px solid #333; color: var(--muted);
+    background: transparent; transition: all 0.2s;
+    font-family: 'Sarabun', sans-serif;
+  }
+  .tab.active { background: var(--gold); color: #1a1100; border-color: var(--gold); }
+  .content { padding: 18px 20px; }
+  .day-section { display: none; }
+  .day-section.active { display: block; }
+  .day-header { margin-bottom: 16px; }
+  .day-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 3px;
+  }
+  .day-date { font-size: 20px; font-weight: 700; color: #fff; }
+  .day-location { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .summary-bar {
+    display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .summary-pill {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 7px 12px; text-align: center; flex: 1; min-width: 60px;
+  }
+  .summary-pill .num { font-size: 17px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .summary-pill .lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 12px; bottom: 12px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    opacity: 0.25;
+  }
+  .event {
+    position: relative; margin-bottom: 12px;
+    animation: fadeUp 0.35s ease forwards; opacity: 0;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .event:nth-child(1){animation-delay:.04s}.event:nth-child(2){animation-delay:.08s}
+  .event:nth-child(3){animation-delay:.12s}.event:nth-child(4){animation-delay:.16s}
+  .event:nth-child(5){animation-delay:.20s}.event:nth-child(6){animation-delay:.24s}
+  .event:nth-child(7){animation-delay:.28s}.event:nth-child(8){animation-delay:.32s}
+  .event:nth-child(9){animation-delay:.36s}.event:nth-child(10){animation-delay:.40s}
+  .event:nth-child(11){animation-delay:.44s}.event:nth-child(12){animation-delay:.48s}
+  .dot {
+    position: absolute; left: -20px; top: 16px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--dark);
+    box-shadow: 0 0 0 2px rgba(201,168,76,0.25);
+  }
+  .dot.travel { background: var(--blue); box-shadow: 0 0 0 2px rgba(74,144,196,0.25); }
+  .dot.food   { background: #E07050; box-shadow: 0 0 0 2px rgba(224,112,80,0.25); }
+  .dot.hotel  { background: var(--green); box-shadow: 0 0 0 2px rgba(76,175,125,0.25); }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #444; }
+  .event-time {
+    font-size: 10px; font-weight: 700; color: var(--muted);
+    letter-spacing: 1px; margin-bottom: 4px;
+  }
+  .event-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px; line-height: 1.3; }
+  .event-desc { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 8px; }
+  .tag {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    letter-spacing: 1px; padding: 2px 7px; border-radius: 4px;
+    text-transform: uppercase; margin-bottom: 5px;
+  }
+  /* สี tag แต่ละประเภท */
+  .tag-travel   { background: rgba(74,144,196,0.15);  color: #7bb3d8; }
+  .tag-temple   { background: rgba(201,168,76,0.15);  color: var(--gold); }
+  .tag-food     { background: rgba(224,112,80,0.15);  color: #e09070; }
+  .tag-hotel    { background: rgba(76,175,125,0.15);  color: #7dcca0; }
+  .tag-activity { background: rgba(180,120,220,0.15); color: #c899e0; }
+  .map-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light); padding: 5px 11px; border-radius: 7px;
+    font-size: 11px; font-weight: 600; text-decoration: none;
+    font-family: 'Sarabun', sans-serif; transition: all 0.2s;
+  }
+  .map-btn:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); }
+  .map-btn svg { width: 11px; height: 11px; flex-shrink: 0; }
+  .note-box {
+    background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.15);
+    border-left: 3px solid var(--gold); border-radius: 8px;
+    padding: 11px 13px; margin-top: 16px;
+    font-size: 12px; color: #bba870; line-height: 1.6;
+  }
+  .note-box strong {
+    color: var(--gold); display: block; margin-bottom: 4px;
+    font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="header">
+    <div class="trip-badge">✈Planner</div>
+    <div class="trip-title">ทริปกราบพระอาจารย์ชยสาโร</div>
+    <div class="trip-meta">
+      <div class="meta-item">📅 <span>15-17 พฤษภาคม 2569</span></div>
+      <div class="meta-item">🌙 <span>3 วัน 2 คืน</span></div>
+    </div>
+  </div>
+  <div id="day-tabs-container" class="day-tabs"><button class="tab" onclick="switchDay(0)" id="tab-0">15 May</button><button class="tab" onclick="switchDay(1)" id="tab-1">16 May</button><button class="tab active" onclick="switchDay(2)" id="tab-2">17 May</button></div>
+  <div class="content" id="days-content"><div class="day-section" id="day-0">
+    <div class="day-header">
+      <div class="day-label">15 May</div>
+      <div class="day-date">วันศุกร์ที่ 15 พฤษภาคม 2569</div>
+      <div class="day-location">📍 กรุงเทพฯ → เขาใหญ่</div>
+    </div>
+    <div class="summary-bar">
+      <div class="summary-pill"><div class="num">4</div><div class="lbl">กิจกรรม</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">วัด/บุญ</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">มื้ออาหาร</div></div>
+      <div class="summary-pill"><div class="num">3</div><div class="lbl">Maps พร้อม</div></div>
+    </div>
+    <div class="timeline"><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">20:00</div>
+      <span class="tag tag-travel">เดินทาง</span>
+      <div class="event-name">ออกจากบ้าน K.ฟืน</div>
+      <div class="event-desc">รถตู้มารับ</div>
+      <a href="https://maps.app.goo.gl/d6H1CdFpksMLe6gt8" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">20:35</div>
+      <span class="tag tag-travel">เดินทาง</span>
+      <div class="event-name">ถึงคอนโด K.กระทิง</div>
+      
+      <a href="https://maps.app.goo.gl/PoZwFzz8iafb3F5TA" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">20:40–00:00</div>
+      <span class="tag tag-travel">เดินทาง</span>
+      <div class="event-name">ออกเดินทางไปเขาใหญ่</div>
+      <div class="event-desc">พักผ่อนตามอัธยาศัย</div>
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot hotel"></div>
+    <div class="card">
+      <div class="event-time">00:05</div>
+      <span class="tag tag-hotel">ที่พัก</span>
+      <div class="event-name">โรงแรม Moon River Village</div>
+      <div class="event-desc">เช็คอินเข้าห้องพัก และ พักผ่อนตามอัธยาศัย</div>
+      <a href="https://maps.app.goo.gl/RsHLWZdtvmCcrjoh9" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div></div>
+    <div class="note-box"><strong>📌 หมายเหตุ</strong>เดินทางช่วงกลางคืนสามารถพักผ่อนบนรถได้</div>
+  </div><div class="day-section" id="day-1">
+    <div class="day-header">
+      <div class="day-label">16 May</div>
+      <div class="day-date">วันเสาร์ที่ 16 พฤษภาคม 2569</div>
+      <div class="day-location">📍 เขาใหญ่</div>
+    </div>
+    <div class="summary-bar">
+      <div class="summary-pill"><div class="num">1</div><div class="lbl">กิจกรรม</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">วัด/บุญ</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">มื้ออาหาร</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">Maps พร้อม</div></div>
+    </div>
+    <div class="timeline"><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">07:00</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">เดินทางไปใส่บาตร กับพระวัดป่ารัตนวัน</div>
+      <div class="event-desc">จำนวน กี่รูป</div>
+      
+    <a href="https://maps.app.goo.gl/8eDLCapbU7EjErmy7" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a></div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">07:20</div>
+      <span class="tag tag-travel">ทำบุญ</span>
+      <div class="event-name">เตรียมตัวใส่บาตร</div>
+      <div class="event-desc">รถตู้มารับ</div>
+      <a href="https://maps.app.goo.gl/vgYrZM3ysxquu1RF8" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">10:00</div>
+      <span class="tag tag-travel">เดินทาง</span>
+      <div class="event-name">ออกจากวัดป่ารัตนวัน</div>
+      <div class="event-desc">รถตู้มารับ</div>
+      <a href="https://maps.app.goo.gl/vgYrZM3ysxquu1RF8" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">10:00-11:40</div>
+      <span class="tag tag-travel">เดินทาง</span>
+      <div class="event-name">เดินทางไปทานมื้อเที่ยง</div>
+      <div class="event-desc">ร้าน เตี๋ยวปลา ชามเปล</div>
+      <a href="https://maps.app.goo.gl/p92NTWT7hraX2TBK7" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">11:45-12:45</div>
+      <span class="tag tag-travel">อาหาร</span>
+      <div class="event-name">ทานอาหารเที่ยง</div>
+      <div class="event-desc">ตามอัธยาศัย</div>
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">12:45-13:05</div>
+      <span class="tag tag-travel">เดินทาง</span>
+      <div class="event-name">เดินทางไปโรงเรียนปัญญาประทีป</div>
+      <div class="event-desc">โรงเรียนปัญญาประทีป</div>
+      <a href="https://maps.app.goo.gl/65ULF3mn2axX2LmH9" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">14:00</div>
+      
+      <span class="tag tag-activity">กิจกรรม</span><div class="event-name">พบอาจารย์แจ๊ส</div>
+      <div class="event-desc">โรงเรียนปัญญาประทีป</div>
+      <a href="https://maps.app.goo.gl/65ULF3mn2axX2LmH9" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">16:30</div>
+      
+      <span class="tag tag-activity">อาหาร</span><div class="event-name">ทานอาหารเย็น</div>
+      <div class="event-desc"></div>
+      <a href="https://maps.app.goo.gl/8YgifXZQeTsJLSYF9" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div><div class="event" style="">
+    <div class="dot travel"></div>
+    <div class="card">
+      <div class="event-time">19:00</div>
+      
+      <span class="tag tag-activity">กิจกรรม</span><div class="event-name">เดินทางเข้าที่พัก</div>
+      <div class="event-desc">Isaree Garden</div>
+      <a href="https://maps.app.goo.gl/8YgifXZQeTsJLSYF9" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+    </svg>เปิด Maps</a>
+    </div>
+  </div></div>
+    
+  </div><div class="day-section active" id="day-2">
+    <div class="day-header">
+      <div class="day-label">17 May</div>
+      <div class="day-date">วันอาทิตย์ที่ 17 พฤษภาคม 2569</div>
+      <div class="day-location">📍 เขาใหญ่ → กรุงเทพฯ</div>
+    </div>
+    <div class="summary-bar">
+      <div class="summary-pill"><div class="num">1</div><div class="lbl">กิจกรรม</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">วัด/บุญ</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">มื้ออาหาร</div></div>
+      <div class="summary-pill"><div class="num">0</div><div class="lbl">Maps พร้อม</div></div>
+    </div>
+    <div class="timeline"><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">07:00</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">นำขวดน้ำ หรือ สิ่งของ ไปวางจองที่ 
+ที่นั่งชั้น2 ของบ้านบุญ 
+</div>
+      <div class="event-desc">(แถวหน้าสุด  นั่งได้เฉพาะผู้ชายนั่ง) 
+(พอจ.ชยสาโร จะเทศน์บนชั้น2 , ชั้น1 จะดูทีวีถ่ายทอดสด) 
+</div>
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">07:30-08:30</div>
+      <span class="tag tag-activity">อาหาร</span>
+      <div class="event-name">กลับไปทานอาหารที่โรงแรม</div>
+      <div class="event-desc">และเตรียมตัว Check-out</div>
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">08:30-09:00</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">เริ่มเข้าไปนั่งรอ</div>
+      <div class="event-desc"></div>
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">09:00-10:30</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">พอจ.ชยสาโร นำทำวัตรเช้า &amp; นั่งสมาธิ </div>
+      <div class="event-desc">ประมาณ 1 ชม.กว่า</div>
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">10:30</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">พักเข้าห้องน้ำ</div>
+      
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">10:45</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">ฟังเทศน์</div>
+      
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">10:30</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">พักเข้าห้องน้ำ</div>
+      
+      
+    <div class="event-desc">พร้อมถวายของได้</div></div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">11:00</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">Q&amp;A  ถามตอบกับพอจ.ชยสาโร </div>
+      
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">12:00</div>
+      <span class="tag tag-activity">กิจกรรม</span>
+      <div class="event-name">จบกิจกรรม</div>
+      
+      
+    </div>
+  </div><div class="event" style="">
+    <div class="dot "></div>
+    <div class="card">
+      <div class="event-time">12:00-</div>
+      <span class="tag tag-activity">เดินทาง</span>
+      <div class="event-name">เดินทางกลับกรุงเทพ</div>
+      
+      
+    </div>
+  </div></div>
+    
+  </div></div>
+
+<script>
+/* ============================================================
+   ✏️  แก้ไขเฉพาะส่วนนี้เท่านั้น — TRIP_DATA
+   โค้ดด้านล่างจะสร้างหน้าเว็บให้อัตโนมัติ
+   ============================================================ */
+
+const TRIP_DATA = {
+
+  /* ---------- ข้อมูลหัวหน้าเว็บ ---------- */
+  title:  "ทริปกราบพระอาจารย์ชยสาโร",
+  dates:  "15–17 พฤษภาคม 2569",
+  nights: 2,
+
+  /* ---------- วันในทริป ----------
+     เพิ่ม/ลด {} ในนี้ได้เลย
+     แต่ละ {} คือ 1 วัน
+  ---------------------------------------- */
+  days: [
+
+    /* ====== วันที่ 1 — 15 พฤษภาคม ====== */
+    {
+      label:    "15 May",
+      date:     "วันศุกร์ที่ 15 พฤษภาคม 2569",
+      location: "กรุงเทพฯ → เขาใหญ่",
+      note:     "เดินทางช่วงกลางคืนสามารถพักผ่อนบนรถได้",
+
+      events: [
+        {
+          time: "16:30",
+          name: "รับ K.ฟืน",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  "https://maps.app.goo.gl/p9fz2VTdH8saR3Zu8"
+        },
+        {
+          time: "19:30",
+          name: "รับ K.กระทิง",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  "https://maps.app.goo.gl/4FosDRz9RUWRkPck6"
+        },
+        {
+          time: "19:40–00:00",
+          name: "ออกเดินทางไปที่พัก Moon River Village",
+          desc: "พักผ่อนตามอัธยาศัย",
+          tag:  "travel",
+          dot:  "travel",
+          map:  "https://maps.app.goo.gl/YhvYVdLJctjfjg6t8"
+        },
+        {
+          time: "00:05",
+          name: "โรงแรม Moon River Village",
+          desc: "เช็คอินเข้าห้องพัก และ พักผ่อนตามอัธยาศัย",
+          tag:  "hotel",
+          dot:  "hotel",
+          map:  "https://maps.app.goo.gl/RsHLWZdtvmCcrjoh9"
+        }
+      ]
+    },
+
+    /* ====== วันที่ 2 — 16 พฤษภาคม ====== */
+    {
+      label:    "16 May",
+      date:     "วันเสาร์ที่ 16 พฤษภาคม 2569",
+      location: "เขาใหญ่",
+      note:     "วัดป่ารัตนวัน — วัดป่าสายหลวงปู่ชา เจ้าอาวาสคือพระอาจารย์ฟิลลิป | เวลาปรับเปลี่ยนไปตามสถานการณ์ที่เกิดขึ้น",
+
+      events: [
+        {
+          time: "07:30",
+          name: "ใส่บาตร วัดป่ารัตนวัน",
+          desc: "",
+          tag:  "temple",
+          dot:  "",
+          map:  "https://maps.app.goo.gl/8eDLCapbU7EjErmy7"
+        },
+        {
+          time: "10:00",
+          name: "ออกจากวัดป่ารัตนวัน",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  ""
+        },
+        {
+          time: "11:45",
+          name: "ทานอาหารเที่ยง ร้านเตี๋ยวปลาชามเปล",
+          desc: "เส้นไข่สดนุ่ม ลูกชิ้นปลาหลากหลาย น้ำซุปกลมกล่อม",
+          tag:  "food",
+          dot:  "food",
+          map:  "https://maps.app.goo.gl/p92NTWT7hraX2TBK7"
+        },
+        {
+          time: "13:00",
+          name: "เดินทางไปโรงเรียนปัญญาประทีป",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  "https://maps.app.goo.gl/65ULF3mn2axX2LmH9"
+        },
+        {
+          time: "14:00",
+          name: "พบ/พูดคุยกับอาจารย์แจ๊ส",
+          desc: "ครูจากโรงเรียนปัญญาประทีป",
+          tag:  "activity",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "16:00",
+          name: "ทานอาหารเย็น",
+          desc: "",
+          tag:  "food",
+          dot:  "food",
+          map:  ""
+        },
+        {
+          time: "17:00",
+          name: "Isaree Secret Garden",
+          desc: "เช็คอินเข้าที่พัก พักผ่อนตามอัธยาศัย",
+          tag:  "hotel",
+          dot:  "hotel",
+          map:  "https://maps.app.goo.gl/8YgifXZQeTsJLSYF9"
+        }
+      ]
+    },
+
+    /* ====== วันที่ 3 — 17 พฤษภาคม ====== */
+    {
+      label:    "17 May",
+      date:     "วันอาทิตย์ที่ 17 พฤษภาคม 2569",
+      location: "เขาใหญ่ → กรุงเทพฯ",
+      note:     "ชั้น 2 บ้านบุญ — แถวหน้าสุดนั่งได้เฉพาะผู้ชาย / ชั้น 1 ดูทีวีถ่ายทอดสด | เวลาปรับเปลี่ยนไปตามสถานการณ์ที่เกิดขึ้น",
+
+      events: [
+        {
+          time: "07:00–07:30",
+          name: "นำขวดน้ำหรือสิ่งของไปวางจองที่นั่ง",
+          desc: "แถวหน้าสุด นั่งได้เฉพาะผู้ชาย / พอจ.ชยสาโร จะเทศน์บนชั้น 2, ชั้น 1 จะดูทีวีถ่ายทอดสด",
+          tag:  "temple",
+          dot:  "",
+          map:  "https://maps.app.goo.gl/K3qECgqpQhpppThc7"
+        },
+        {
+          time: "07:30–08:30",
+          name: "กลับไปทานอาหารเช้าที่โรงแรม",
+          desc: "รับประทานอาหารเช้าและ check-out",
+          tag:  "food",
+          dot:  "food",
+          map:  "https://maps.app.goo.gl/uFtapRyiCee8mc7p6"
+        },
+        {
+          time: "08:30–09:00",
+          name: "ขึ้นไปนั่งรอที่ชั้น 2 บ้านบุญ",
+          desc: "ขึ้นไปนั่งรอก่อนเริ่มกิจกรรม",
+          tag:  "temple",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "09:00–10:15",
+          name: "ทำวัตรเช้า & นั่งสมาธิ นำโดย พอจ.ชยสาโร",
+          desc: "ประมาณ 1 ชั่วโมงกว่า",
+          tag:  "temple",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "~10:15",
+          name: "พักเข้าห้องน้ำ",
+          desc: "",
+          tag:  "activity",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "~10:20",
+          name: "ฟังเทศน์ พอจ.ชยสาโร",
+          desc: "",
+          tag:  "temple",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "~11:00",
+          name: "พักเข้าห้องน้ำ + ถวายของให้ พอจ.",
+          desc: "",
+          tag:  "temple",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "~11:15",
+          name: "Q&A ถามตอบกับ พอจ.ชยสาโร",
+          desc: "",
+          tag:  "temple",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "12:00",
+          name: "จบกิจกรรม",
+          desc: "",
+          tag:  "activity",
+          dot:  "",
+          map:  ""
+        },
+        {
+          time: "12:10–13:15",
+          name: "ออกไปทานอาหารเที่ยง",
+          desc: "",
+          tag:  "food",
+          dot:  "food",
+          map:  ""
+        },
+        {
+          time: "13:30–16:30",
+          name: "เดินทางกลับกรุงเทพฯ",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  ""
+        },
+        {
+          time: "15:15",
+          name: "ส่ง K.กระทิง",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  "https://maps.app.goo.gl/4FosDRz9RUWRkPck6"
+        },
+        {
+          time: "16:00",
+          name: "ส่ง K.ฟืน",
+          desc: "",
+          tag:  "travel",
+          dot:  "travel",
+          map:  "https://maps.app.goo.gl/p9fz2VTdH8saR3Zu8"
+        }
+      ]
+    }
+
+    /* เพิ่มวันได้โดยคัดลอก {} ของวันทั้งหมดมาต่อ
+       อย่าลืมใส่ , (จุลภาค) หลังปิด } ทุกครั้ง ยกเว้นวันสุดท้าย */
+  ]
+};
+
+/* ============================================================
+   * ตัวเลือก tag และ dot ที่ใช้ได้:
+
+   tag / dot    สี       ใช้สำหรับ
+   ─────────────────────────────────────────
+   "travel"     ฟ้า      เดินทาง, สนามบิน, รถ
+   "temple"     ทอง      วัด, ทำบุญ, สักการะ
+   "food"       ส้ม      อาหาร, ร้านกาแฟ
+   "hotel"      เขียว    โรงแรม, เช็คอิน/เอาต์
+   "activity"   ม่วง     กิจกรรม, พิพิธภัณฑ์, ชม
+   ""           ทอง      (ค่าเริ่มต้น ถ้าไม่ระบุ)
+
+   dot ใช้เฉพาะ: "travel", "food", "hotel" หรือ ""
+   ============================================================ */
+
+
+/* ============================================================
+   ด้านล่างนี้คือโค้ดสร้างหน้าเว็บ — ไม่ต้องแก้ไข
+   ============================================================ */
+
+const tagLabels = {
+  travel:"เดินทาง", temple:"วัด/บุญ", food:"อาหาร",
+  hotel:"ที่พัก", activity:"กิจกรรม"
+};
+const dotClass = { travel:"travel", food:"food", hotel:"hotel" };
+
+function mapBtn(url) {
+  if (!url) return '';
+  return `<a href="${url}" target="_blank" class="map-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>เปิด Maps</a>`;
+}
+
+function buildEvent(e) {
+  return `<div class="event">
+    <div class="dot ${dotClass[e.dot]||''}"></div>
+    <div class="card">
+      <div class="event-time">${e.time}</div>
+      <span class="tag tag-${e.tag}">${tagLabels[e.tag]||e.tag}</span>
+      <div class="event-name">${e.name}</div>
+      ${e.desc ? `<div class="event-desc">${e.desc}</div>` : ''}
+      ${mapBtn(e.map)}
+    </div>
+  </div>`;
+}
+
+function buildDay(day, i) {
+  const temples = day.events.filter(e => e.tag === 'temple').length;
+  const foods   = day.events.filter(e => e.tag === 'food').length;
+  const maps    = day.events.filter(e => e.map).length;
+  return `<div class="day-section ${i===0?'active':''}" id="day-${i}">
+    <div class="day-header">
+      <div class="day-label">${day.label}</div>
+      <div class="day-date">${day.date}</div>
+      <div class="day-location">📍 ${day.location}</div>
+    </div>
+    <div class="summary-bar">
+      <div class="summary-pill"><div class="num">${day.events.length}</div><div class="lbl">กิจกรรม</div></div>
+      <div class="summary-pill"><div class="num">${temples}</div><div class="lbl">วัด/บุญ</div></div>
+      <div class="summary-pill"><div class="num">${foods}</div><div class="lbl">มื้ออาหาร</div></div>
+      <div class="summary-pill"><div class="num">${maps}</div><div class="lbl">Maps พร้อม</div></div>
+    </div>
+    <div class="timeline">${day.events.map(buildEvent).join('')}</div>
+    ${day.note ? `<div class="note-box"><strong>📌 หมายเหตุ</strong>${day.note}</div>` : ''}
+  </div>`;
+}
+
+document.getElementById('day-tabs-container').innerHTML =
+  TRIP_DATA.days.map((d,i) => `<button class="tab ${i===0?'active':''}" onclick="switchDay(${i})" id="tab-${i}">${d.label}</button>`).join('');
+
+document.getElementById('days-content').innerHTML =
+  TRIP_DATA.days.map(buildDay).join('');
+
+function switchDay(i) {
+  document.querySelectorAll('.day-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('day-' + i).classList.add('active');
+  document.getElementById('tab-' + i).classList.add('active');
+  document.querySelectorAll('#day-' + i + ' .event').forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = '';
+  });
+}
+</script>
+
+
+</div></body></html>
